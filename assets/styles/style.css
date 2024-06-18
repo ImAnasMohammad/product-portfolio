@@ -1,0 +1,239 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Sora:wght@100..800&display=swap');
+
+:root{
+      --font-family:"Manrope","Sora",'sans';
+
+      /* for bright theme */
+      --themeBGColor:#FFF6E9;
+      --themeColor:#121212;
+      --lite-theme-color:#6d6d6d;
+      --lite-theme-BGColor:#b8b8b8;
+
+      /* for dark theme  */
+      /* --themeBGColor:#0A0A0A;
+      --themeColor:#fff6e9;
+      --lite-theme-color:#2c2c2c;
+      --lite-theme-BGColor:rgba(149, 149, 149,0.8); */
+      
+}
+*{
+      padding: 0px;
+      margin:0px;
+      box-sizing: border-box;
+      font-family: var(--font-family);
+      letter-spacing: 1px;
+}
+a{
+      color:var(--themeColor);
+      text-decoration: none;
+}
+body{
+      position: relative;
+      min-height: 100vh;
+      background-color: var(--themeBGColor);
+      color:var(--themeColor);
+}
+.loader-wrapper{
+      position: absolute;
+      height: 100%;
+      top:0;
+      left: 0;
+      bottom: 0;
+      right:0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: var(--themeBGColor);
+      z-index: 999;
+      flex-direction: column;
+      gap:10px
+}
+.loader-wrapper.active{
+      display: none;
+}
+.loader {
+      width: 80px;
+      aspect-ratio: 1;
+      position: relative;
+      border: 10px solid var(--themeBGColor);
+      box-sizing: border-box;
+      background: 
+            radial-gradient(farthest-side at right,var(--themeColor) 98%,var(--themeBGColor)) 20% 50%/40% 80%,
+            radial-gradient(farthest-side at left ,var(--themeColor) 98%,var(--themeBGColor)) 80% 50%/40% 80%,
+            var(--themeBGColor);
+      background-repeat: no-repeat;
+      filter: blur(4px) contrast(10); 
+      animation: l18 0.8s infinite alternate;
+}
+@keyframes l18 {
+      0%,20% {background-position:20% 50%,80% 50%}
+      100%   {background-position:80% 50%,20% 50%}
+}
+
+.loader-label{
+      width:'fit-content';
+      bottom: 0px;
+      font-size: 16px;
+      letter-spacing: 1.1px;
+      color:var(--themeColor)
+}
+.navbar{
+
+      background-color: var(--themeBGColor);
+      padding: 40px;
+      .nav-wrapper{
+            max-width: 1240px;
+            display: flex;
+            justify-content: space-between;
+            margin: auto;
+      }
+      .nav-menu-btn{
+            display: none;
+      }
+      .nav-items{
+            display: flex;
+            gap:50px;
+            
+            li{
+                  list-style-type: none;
+            }
+            .nav-link{
+                  color:var(--themeColor)
+            }
+      }
+      .nav-items-wrapper{
+            transition: all .75s;
+      }
+
+}
+.navbar.sticky{
+      transition: all 1.5s !important;
+      position: sticky;
+      top:0;
+      animation: sticky 1s linear;
+      background-color: var(--themeColor);
+      padding: 30px;
+      box-shadow: 0px 0px 60px 1px var(--lite-theme-color);
+      .nav-link{
+            color:var(--themeBGColor)
+      }
+      @keyframes sticky {
+            from{
+                  background: var(--themeBGColor);
+            }
+            to{
+                  padding: 20px;
+                  background-color: var(--themeColor);
+            }
+      }
+}
+@media only screen and (max-width: 500px) {
+      .navbar{
+            padding: 20px 20px 0px 20px;
+            .nav-items,.nav-wrapper{
+                  flex-direction: column;
+                  gap:30px;
+            }
+            .nav-wrapper{
+                  justify-content: center;
+
+                  .navbar-brand{
+                        display: flex;
+                        align-items: center;
+                  }
+            }
+            .nav-items-wrapper{
+                  height: 0px;
+                  overflow: hidden;
+            }
+            .nav-items-wrapper.active{
+                  height:200px;
+            }
+            .nav-menu-btn{
+                  display: inline;
+                  padding: 10px 15px;
+                  border-radius: 5px;
+                  background-color: var(--themeBGColor);
+                  color: var(--themeColor);
+                  outline: none;
+                  border:1px solid var(--lite-theme-color);
+            }
+            .logo-wrapper{
+                  display: flex;
+                  justify-content: space-between;
+            }
+      }
+      .navbar.sticky{
+            background-color: var(--themeColor);
+            color: var(--themeBGColor);
+            border:1px solid var(--lite-theme-BGColor);     
+            padding: 20px 20px 0px 20px;
+            
+            .nav-menu-btn{
+                  background-color: var(--themeColor);
+                  color: var(--themeBGColor);
+                  border:1px solid var(--lite-theme-BGColor);
+            }
+      }
+}
+
+
+.main-wrapper{
+      max-width: 1200px;
+      margin:auto;
+}
+@media only screen and (max-width: 1220px) {
+      .main-wrapper{
+            padding: 0px 20px;
+      }
+}
+
+
+/* style for theme changer */
+
+.theme-toggle-wrapper{
+      display: flex;
+      gap:10px;
+      i{
+            color:var(--themeColor)
+      }
+      div{
+            position: relative;
+            width:40px;
+            height:21px;
+            border:1px solid var(--themeColor);
+            border-radius: 10px;
+            cursor: pointer;
+      }
+      div:before{
+            content:'';
+            position: absolute;
+            height: 20px;
+            width:20px;
+            border-radius: 50%;
+            background-color: var(--themeColor);
+            top:0;
+            left:0;
+      }
+      div.night:before{
+            right:0px;
+      }
+
+      
+}
+
+.navbar.sticky{
+      .theme-toggle-wrapper{
+            i{
+                  color:var(--themeBGColor)
+            }
+            div{
+                  border-color:var(--themeBGColor);
+            }
+            div:before{
+                  background-color:var(--themeBGColor);
+            }
+      }
+}
