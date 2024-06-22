@@ -6,16 +6,16 @@
       --font-family:"Manrope","Sora",'sans';
 
       /* for bright theme */
-      --themeBGColor:#FFF6E9;
+      /* --themeBGColor:#FFF6E9;
       --themeColor:#121212;
       --lite-theme-color:#6d6d6d;
-      --lite-theme-BGColor:#b8b8b8;
+      --lite-theme-BGColor:#b8b8b8; */
 
       /* for dark theme  */
-      /* --themeBGColor:#0A0A0A;
+      --themeBGColor:#0A0A0A;
       --themeColor:#fff6e9;
       --lite-theme-color:#2c2c2c;
-      --lite-theme-BGColor:rgba(149, 149, 149,0.8); */
+      --lite-theme-BGColor:rgba(149, 149, 149,0.8);
       
 }
 *{
@@ -34,6 +34,14 @@ body{
       min-height: 100vh;
       background-color: var(--themeBGColor);
       color:var(--themeColor);
+      padding-bottom: 70px;
+      transition: all .5s;
+      max-width: 100vw;
+}
+
+body.loaded{
+      height: 100vh;
+      overflow: hidden;
 }
 .loader-wrapper{
       position: absolute;
@@ -116,6 +124,7 @@ body{
       background-color: var(--themeColor);
       padding: 30px;
       box-shadow: 0px 0px 60px 1px var(--lite-theme-color);
+      z-index: 998;
       .nav-link{
             color:var(--themeBGColor)
       }
@@ -215,8 +224,11 @@ body{
             border-radius: 50%;
             background-color: var(--themeColor);
             top:0;
-            left:0;
       }
+
+      /* div.day:before{
+            left:0;
+      } */
       div.night:before{
             right:0px;
       }
@@ -236,4 +248,116 @@ body{
                   background-color:var(--themeBGColor);
             }
       }
+}
+
+
+button{
+      padding:20px 40px;
+      outline:none;
+      border:0px;
+      border-radius:30px;
+      border:2px solid var(--themeColor);
+      font-weight:500;
+      font-size:1rem;
+      cursor: pointer;
+      background-color: transparent;
+      color:var(--themeColor);
+      position: relative;
+      overflow: hidden;
+}
+
+.btn::before{
+
+      content:'';
+      position: absolute;
+      height:100%;
+      width:100%;
+      border-radius: 30px;
+      top:0;
+      bottom: 0;
+      right:100%;
+      background-color: var(--themeColor);
+      width:10%;
+}
+
+.btn.primary::before{
+      background-color: var(--themeBGColor);
+}
+
+.btn:hover::before{
+      animation: primary-btn-ani .55s linear;
+
+}
+ 
+
+.btn.primary{
+      color:var(--themeBGColor);
+      background-color: var(--themeColor);
+}
+
+
+
+/* animation on scroll  */
+.overfow-hidden{
+      overflow: hidden;
+}
+.hide-intersect{
+      opacity: 0;
+}
+.x1{
+      transform: translateX(-150px);
+}
+.x2{
+      transform: translateX(-170px);
+}
+.x3{
+      transform: translateX(-190px);
+}
+
+.n-x1{
+      transform: translateX(150px);
+}
+.n-x2{
+      transform: translateX(170px);
+}
+.n-x3{
+      transform: translateX(190px);
+}
+.y1{
+      transform: translateY(-150px);
+}
+.y2{
+      transform: translateY(-170px);
+}
+.y3{
+      transform: translateY(-190px);
+}
+
+.n-y1{
+      transform: translateY(150px);
+}
+.n-y2{
+      transform: translateY(170px);
+}
+.n-y3{
+      transform: translateY(190px);
+}
+.t1{
+      transition: all 1s;
+}
+.t2{
+      transition: all 1.3s;
+}
+.t3{
+      transition: all 2.5s;
+}
+
+.show-intersect{
+      opacity: 1;
+      filter: blur(0px);
+      transform: translateX(0px);
+}
+
+.bg{
+      background-color: red;
 }

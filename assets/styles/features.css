@@ -11,7 +11,9 @@
       .features-main-wrapper{
             display: flex;
             gap: 70px;
-
+            .image-wrapper{
+                  position: relative;
+            }
             .features-wrapper{
                   display: grid;
                   grid-template-columns: repeat(auto-fill,minmax(250px,1fr));
