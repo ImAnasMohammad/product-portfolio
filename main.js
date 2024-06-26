@@ -5,6 +5,9 @@ const navToggleBtn = document.querySelector('#toggle-nav-bar');
 const navItemsWrapper = document.querySelector('.nav-items-wrapper');
 const themeToggleBtn = document.querySelector('#theme-toggler');
 const root = document.querySelector(':root');
+var prevScrollValue = 0;
+
+const variationSliderProgressBar = document.querySelector('#slider-progress');
 
 // default for Dark Mode
 
@@ -12,7 +15,9 @@ const themeBGColor ="#0A0A0A" ;
 const themeColor = "#fff6e9";
 const liteBGColor = "rgba(149, 149, 149,0.8)";
 const liteColor = "#2c2c2c";
-
+const changeRootVariableValue = (variable,value)=>{
+      root.style.setProperty(variable, value);
+}
 const changeThemeMode = ()=>{
       if(isDarkMode){
             themeToggleBtn.classList.remove('day')
@@ -26,10 +31,10 @@ const changeThemeMode = ()=>{
 }
 
 const setThemeColor = (color,bgColor,liteColor,liteBGColor)=>{
-      root.style.setProperty('--themeColor', color);
-      root.style.setProperty('--themeBGColor',bgColor);
-      root.style.setProperty('--lite-theme-color', liteColor);
-      root.style.setProperty('--lite-theme-BGColor', liteBGColor);
+      changeRootVariableValue('--themeColor', color);
+      changeRootVariableValue('--themeBGColor',bgColor);
+      changeRootVariableValue('--lite-theme-color', liteColor);
+      changeRootVariableValue('--lite-theme-BGColor', liteBGColor);
 }
 
 
@@ -64,8 +69,23 @@ const setThemeColor = (color,bgColor,liteColor,liteBGColor)=>{
 navToggleBtn.addEventListener('click',()=>{
       navItemsWrapper.classList.toggle('active')
 })
-window.onscroll = function (e) {
-      navBar.classList.toggle('sticky',window.scrollY>=110)
+window.onscroll = function () {
+
+      const value = window.scrollY;
+
+      if(value>=110){
+            navBar.classList.add('sticky');
+            
+
+            if(prevScrollValue>value){
+                  navBar.classList.remove('top-20');
+            }else{
+                  navBar.classList.add('top-20');
+            }
+            prevScrollValue = value;
+      }else{
+            navBar.classList.remove('sticky');
+      }
 };
 
 themeToggleBtn.addEventListener('click',()=>{
@@ -83,3 +103,28 @@ const observer = new IntersectionObserver((entries)=>{
 
 
 animateElements.forEach(el=>observer.observe(el))
+
+
+
+
+variationSliderProgressBar.addEventListener('input',(e)=>{
+      console.log(e.target.valueAsNumber)
+      changeRootVariableValue('--before-width',e.target.valueAsNumber+"%");
+})
+
+
+
+var swiper = new Swiper(".mySwiper", {
+      effect: "coverflow",
+      grabCursor: true,
+      centeredSlides: true,
+      slidesPerView: "auto",
+      coverflowEffect: {
+        rotate: 0,
+        stretch: 0,
+        depth: 100,
+        modifier: 2,
+        slideShadows: true,
+      },
+      loop:true
+    });

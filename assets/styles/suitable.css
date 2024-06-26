@@ -1,0 +1,68 @@
+.suitable{
+
+      .suitable-wrapper{
+            display: flex;
+            cursor: pointer;
+
+            .suitable{
+                  flex:1;
+                  transition: all .75s;
+                  overflow: hidden;
+                  position: relative;
+
+                  .suitable-content{
+                        position: absolute;
+                        top:0;
+                        display: flex;
+                        justify-content: center;
+                        flex-direction: column;
+                        width: 80%;
+                        height: 100%;
+                        padding: 20px;
+                        p{
+                              transform: translateY(50px);
+                              line-height: 28px;
+                              transform: translateY(80px);
+                        }
+                        h2{
+                              font-size: 2.5rem;
+                              transform: translateY(80px);
+                        }
+                        p,h2{
+                              transition: all .1s;
+                              opacity: 0;
+                              left: 50px;
+                              top: 50px;
+                              color: #ffff;
+                        }
+                  }
+
+                  img{
+                        width: 100%;
+                        height:70vh;
+                        object-fit: cover;
+                  }
+            }
+            .suitable:hover{
+                  flex:4;
+
+                  .suitable-content{
+                        h2,p{
+                              transition:all .75s ;
+                              transition-delay:.5s;
+                              opacity: 1;
+                              transform: translateY(0);
+                        }
+                  }
+            }
+            .suitable:hover:before{
+                  content:'';
+                  position: absolute;
+                  inset:0;
+                  background-color: rgba(0,0,0,0.8);
+                  transition: background-color .5s;
+            }
+      }
+
+      
+}

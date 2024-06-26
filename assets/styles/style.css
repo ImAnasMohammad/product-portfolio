@@ -2,6 +2,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Sora:wght@100..800&display=swap');
 
+
+/* colors pallet 
+==>#CAD9C0
+==>#A03544
+==>#C98C48
+==>#4E8AAB */
+
+/* 
+linear-gardients  */
+
+/* ==>#2E6BB6==>#CD8242==>#CD8242 */
+
+
 :root{
       --font-family:"Manrope","Sora",'sans';
 
@@ -16,6 +29,7 @@
       --themeColor:#fff6e9;
       --lite-theme-color:#2c2c2c;
       --lite-theme-BGColor:rgba(149, 149, 149,0.8);
+      --btnBGColor: linear-gradient(to right,#810458,#CD7D3D, #3E81B2);
       
 }
 *{
@@ -42,6 +56,13 @@ body{
 body.loaded{
       height: 100vh;
       overflow: hidden;
+}
+.display-none{
+      display: none;
+}
+
+.top-20{
+      top:-100% !important;
 }
 .loader-wrapper{
       position: absolute;
@@ -119,7 +140,7 @@ body.loaded{
 .navbar.sticky{
       transition: all 1.5s !important;
       position: sticky;
-      top:0;
+      top:0px;
       animation: sticky 1s linear;
       background-color: var(--themeColor);
       padding: 30px;
@@ -256,11 +277,11 @@ button{
       outline:none;
       border:0px;
       border-radius:30px;
-      border:2px solid var(--themeColor);
+      border:0px solid var(--themeColor);
       font-weight:500;
       font-size:1rem;
       cursor: pointer;
-      background-color: transparent;
+      background-color: var(--btnBGColor);
       color:var(--themeColor);
       position: relative;
       overflow: hidden;
@@ -276,12 +297,12 @@ button{
       top:0;
       bottom: 0;
       right:100%;
-      background-color: var(--themeColor);
+      /* background-color: var(--themeColor); */
       width:10%;
 }
 
 .btn.primary::before{
-      background-color: var(--themeBGColor);
+      /* background-color: var(--themeBGColor); */
 }
 
 .btn:hover::before{
@@ -291,8 +312,8 @@ button{
  
 
 .btn.primary{
-      color:var(--themeBGColor);
-      background-color: var(--themeColor);
+      color:var(--themeColor);
+      background: var(--btnBGColor);
 }
 
 
@@ -360,4 +381,12 @@ button{
 
 .bg{
       background-color: red;
+}
+
+
+section>h1{
+      font-size: 3rem;
+      text-transform: capitalize;
+      text-align: center;
+      margin:100px 0px 40px 0px;
 }
