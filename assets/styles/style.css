@@ -390,3 +390,25 @@ section>h1{
       text-align: center;
       margin:100px 0px 40px 0px;
 }
+
+.subscribe-wrapper{
+      width: 80%;
+      max-width: 500px;
+      display: flex;
+      justify-content: center;
+      margin:0px auto;
+      gap:20px;
+      input{
+            flex:1 1 auto;
+            outline: none;
+            padding:0px 20px;
+            background-color: var(--themeColor);
+            color: var(--themeBGColor) !important;
+            font-weight: 500;
+            border-radius: 10px;
+      }
+
+      button{
+            color:#ffff !important
+      }
+}
