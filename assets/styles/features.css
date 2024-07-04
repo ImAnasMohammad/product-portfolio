@@ -14,6 +14,7 @@
                   grid-template-columns: repeat(auto-fill,minmax(250px,1fr));
                   gap:40px;
                   height: fit-content;
+                  max-width: 100%;
             }
 
             .feature{
@@ -29,6 +30,11 @@
                   }
                   .feature-name{
                         line-height: 1.5rem;
+                  }
+                  p.feature-description{
+                        font-size: 0.9rem;
+                        line-height: 1.3rem;
+                        color: var(--lite-theme-Color) !important;
                   }
             }
       }

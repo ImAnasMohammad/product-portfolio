@@ -5,11 +5,15 @@
 .variation{
 
       margin: 100px 0px;
-      .slider-wrapper{
-            position: relative;
-            background:green;
-            width: fit-content;
-            margin:0 auto;
+      .slider-main-wrapper{
+
+            padding: 0px 30px;
+            .slider-wrapper{
+                  position: relative;
+                  width: fit-content;
+                  margin:0 auto;
+                  /* padding: 0px 30px; */
+            }
       }
 
       .image-wrapper{

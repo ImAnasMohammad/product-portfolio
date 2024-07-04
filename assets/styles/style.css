@@ -28,7 +28,7 @@ linear-gardients  */
       --themeBGColor:#0A0A0A;
       --themeColor:#fff6e9;
       --lite-theme-color:#2c2c2c;
-      --lite-theme-BGColor:rgba(149, 149, 149,0.8);
+      --lite-theme-BGColor:rgba(178, 178, 178, 0.8);
       --btnBGColor: linear-gradient(to right,#810458,#CD7D3D, #3E81B2);
       
 }
@@ -282,7 +282,7 @@ button{
       font-size:1rem;
       cursor: pointer;
       background-color: var(--btnBGColor);
-      color:var(--themeColor);
+      color:#fff;
       position: relative;
       overflow: hidden;
 }
@@ -297,13 +297,9 @@ button{
       top:0;
       bottom: 0;
       right:100%;
-      /* background-color: var(--themeColor); */
       width:10%;
 }
 
-.btn.primary::before{
-      /* background-color: var(--themeBGColor); */
-}
 
 .btn:hover::before{
       animation: primary-btn-ani .55s linear;
@@ -312,7 +308,6 @@ button{
  
 
 .btn.primary{
-      color:var(--themeColor);
       background: var(--btnBGColor);
 }
 

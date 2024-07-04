@@ -8,13 +8,23 @@
             flex:1 1 auto;
             display: flex;
             flex-direction: column;
-            gap:10px;
+            gap:40px;
             h1{
                   font-size: 4rem;
             }
-            h6{
-                  font-size: 3rem;
-                  font-weight: 600;
+            p>q{
+                  letter-spacing: 1.7px;
+                  font-size: 0.9rem;
+                  color:var(--lite-theme-color);
+            }
+            div{
+                  
+                  button{
+                        text-transform: uppercase;
+                        i{
+                              margin-left: 5px;
+                        }
+                  }
             }
       }
 
@@ -47,13 +57,20 @@
 
 @media only screen and (max-width: 830px) {
       .section-1{
-            flex-direction: column;
+            flex-direction: column-reverse;
             gap:50px;
             .content-wrapper{
                   align-items: center;
             }
             .image-wrapper{
                   flex:0 0 40%;
+                  max-width: 350px;
+            }
+            .content-wrapper{
+                  p{
+                        text-align: center;
+                        /* display: none; */
+                  }
             }
       }
 }

@@ -13,8 +13,8 @@ const variationSliderProgressBar = document.querySelector('#slider-progress');
 
 const themeBGColor ="#0A0A0A" ;
 const themeColor = "#fff6e9";
-const liteBGColor = "rgba(149, 149, 149,0.8)";
-const liteColor = "#2c2c2c";
+const liteBGColor = "rgb(0 0 0)";
+const liteColor = "#c8c8c8";
 const changeRootVariableValue = (variable,value)=>{
       root.style.setProperty(variable, value);
 }
@@ -69,6 +69,8 @@ const setThemeColor = (color,bgColor,liteColor,liteBGColor)=>{
 navToggleBtn.addEventListener('click',()=>{
       navItemsWrapper.classList.toggle('active')
 })
+
+
 window.onscroll = function () {
 
       const value = window.scrollY;
