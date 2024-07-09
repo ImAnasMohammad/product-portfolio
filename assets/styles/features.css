@@ -1,6 +1,7 @@
 .features{
       display: flex;
       gap:50px;
+      margin-top: 70px;
       flex-direction: column;
       padding: 0px 0px 90px 0px;
       border-radius: 10px;
@@ -8,15 +9,12 @@
       h1{
         color:#000;
       }
-      /* .features-main-wrapper{
-          overflow: hidden;
-          padding: 20px; */
           .features-wrapper{
               display: grid;
               overflow: hidden;
                 grid-template-columns: repeat(auto-fill,minmax(350px,1fr));
                 gap:40px;
-                padding: 30px;
+                padding: 0px 30px 30px 30px;
                 height: fit-content;
                 max-width: 100%;
             }
