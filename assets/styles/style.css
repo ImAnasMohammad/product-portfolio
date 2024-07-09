@@ -19,17 +19,18 @@ linear-gardients  */
       --font-family:"Manrope","Sora",'sans';
 
       /* for bright theme */
-      /* --themeBGColor:#FFF6E9;
+      --themeBGColor:#FFF6E9;
       --themeColor:#121212;
-      --lite-theme-color:#6d6d6d;
-      --lite-theme-BGColor:#b8b8b8; */
+      --lite-theme-color:#dedede;
+      --lite-theme-BGColor:#b8b8b8;
 
       /* for dark theme  */
-      --themeBGColor:#0A0A0A;
+      /* --themeBGColor:#0A0A0A;
       --themeColor:#fff6e9;
       --lite-theme-color:#2c2c2c;
-      --lite-theme-BGColor:rgba(178, 178, 178, 0.8);
+      --lite-theme-BGColor:rgba(178, 178, 178, 0.8); */
       --btnBGColor: linear-gradient(to right,#810458,#CD7D3D, #3E81B2);
+      --btnBGLiteColor: linear-gradient(to right,rgba(129, 4, 88,0.3) ,rgba(205, 125, 61,0.3), rgba(62, 129, 178,0.3));
       
 }
 *{
@@ -46,11 +47,12 @@ a{
 body{
       position: relative;
       min-height: 100vh;
-      background-color: var(--themeBGColor);
+      background-color: var(--themeColor);
       color:var(--themeColor);
       padding-bottom: 70px;
       transition: all .5s;
       max-width: 100vw;
+      overflow-x: hidden;
 }
 
 body.loaded{
@@ -110,13 +112,22 @@ body.loaded{
 }
 .navbar{
 
-      background-color: var(--themeBGColor);
+      background-color: transparent;
       padding: 40px;
       .nav-wrapper{
             max-width: 1240px;
             display: flex;
             justify-content: space-between;
+            align-items: center;
             margin: auto;
+            /* background-color: red; */
+            .logo-wrapper{
+                max-width: 100px;
+
+                img{
+                    width:100%;
+                }
+            }
       }
       .nav-menu-btn{
             display: none;
@@ -125,12 +136,14 @@ body.loaded{
             display: flex;
             gap:50px;
             
-            li{
+                li{
                   list-style-type: none;
-            }
-            .nav-link{
-                  color:var(--themeColor)
-            }
+                }
+                .nav-link{
+                    color:var(--themeBGColor);
+                    font-size: 1.4rem;
+                    font-weight: 600;
+                }
       }
       .nav-items-wrapper{
             transition: all .75s;
@@ -142,12 +155,12 @@ body.loaded{
       position: sticky;
       top:0px;
       animation: sticky 1s linear;
-      background-color: var(--themeColor);
+      background-color: var(--themeBGColor);
       padding: 30px;
-      box-shadow: 0px 0px 60px 1px var(--lite-theme-color);
+      box-shadow: 0px 0px 40px 1px rgba(0, 0, 0,0.3);
       z-index: 998;
       .nav-link{
-            color:var(--themeBGColor)
+        color:var(--themeColor)
       }
       @keyframes sticky {
             from{
@@ -209,53 +222,38 @@ body.loaded{
       }
 }
 
+.bg-image{
+    height: 100vh;
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+    background: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.9)), url('../images/paint-bg.jpg') ;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position:center;
+    animation: image-animate .75s;
+    overflow: hidden;
+
+}
+
+
+@keyframes image-animate {
+    0% {transform: scale(1.2);}
+    100% {transform: scale(1);}
+}
 
 .main-wrapper{
-      max-width: 1200px;
-      margin:auto;
+    max-width: 90%;
+    margin:auto;
 }
 @media only screen and (max-width: 1220px) {
-      .main-wrapper{
-            padding: 0px 20px;
-      }
+    .main-wrapper{
+        padding: 0px 20px;
+    }
 }
 
-
-/* style for theme changer */
-
-.theme-toggle-wrapper{
-      display: flex;
-      gap:10px;
-      i{
-            color:var(--themeColor)
-      }
-      div{
-            position: relative;
-            width:40px;
-            height:21px;
-            border:1px solid var(--themeColor);
-            border-radius: 10px;
-            cursor: pointer;
-      }
-      div:before{
-            content:'';
-            position: absolute;
-            height: 20px;
-            width:20px;
-            border-radius: 50%;
-            background-color: var(--themeColor);
-            top:0;
-      }
-
-      /* div.day:before{
-            left:0;
-      } */
-      div.night:before{
-            right:0px;
-      }
-
-      
-}
 
 .navbar.sticky{
       .theme-toggle-wrapper{
@@ -318,7 +316,7 @@ button{
       overflow: hidden;
 }
 .hide-intersect{
-      opacity: 0;
+      /* opacity: 0; */
 }
 .x1{
       transform: translateX(-150px);

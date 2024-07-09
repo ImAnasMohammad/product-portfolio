@@ -1,7 +1,7 @@
 .video{
       margin:70px auto;
       padding:50px;
-      max-width: 900px;
+      max-width: 100%;
 
       p{
             color:var(--lite-theme-color);
