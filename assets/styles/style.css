@@ -31,6 +31,7 @@ linear-gardients  */
       --lite-theme-BGColor:rgba(178, 178, 178, 0.8); */
       --btnBGColor: linear-gradient(to right,#810458,#CD7D3D, #3E81B2);
       --btnBGLiteColor: linear-gradient(to right,rgba(129, 4, 88,0.3) ,rgba(205, 125, 61,0.3), rgba(62, 129, 178,0.3));
+      --borderRadius:10px;
       
 }
 *{
@@ -373,15 +374,16 @@ button{
 }
 
 .bg{
-      background-color: red;
+    background-color: red;
 }
 
 
 section>h1{
-      font-size: 3rem;
-      text-transform: capitalize;
-      text-align: center;
-      margin:100px 0px 40px 0px;
+    font-size: 3rem;
+    text-transform: capitalize;
+    text-align: center;
+    padding: 30px;
+
 }
 
 .subscribe-wrapper{

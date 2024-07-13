@@ -12,7 +12,7 @@
     .logo-slide{
       display: inline-flex;
       gap: 50px;
-      animation: 15s slideClients infinite linear;
+      /* animation: 15s slideClients infinite linear; */
     }
     .logo-slider-wrapper:hover .logo-slide{
       animation-play-state: paused;

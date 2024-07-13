@@ -1,9 +1,14 @@
-.suitable{
-
+.suitable-main-wrapper{
+    background-color:var(--themeBGColor);
+    padding: 0px 40px  60px;
+    border-radius: var(--borderRadius);
+    margin-top: 50px;
+    h1{
+        padding-bottom: 30px;
+    }
       .suitable-wrapper{
             display: flex;
             cursor: pointer;
-
             .suitable{
                   flex:1;
                   transition: all .75s;
@@ -13,6 +18,7 @@
                   .suitable-content{
                         position: absolute;
                         top:0;
+                        overflow: hidden;
                         display: flex;
                         justify-content: center;
                         flex-direction: column;
