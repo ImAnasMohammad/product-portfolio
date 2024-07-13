@@ -41,6 +41,9 @@ linear-gardients  */
       font-family: var(--font-family);
       letter-spacing: 1px;
 }
+html {
+    scroll-behavior: smooth;
+  }
 a{
       color:var(--themeColor);
       text-decoration: none;
